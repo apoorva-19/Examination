@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.4.5
+- http://www.phpmyadmin.net
+-
+- Host: localhost
+- Generation Time: Mar 15, 2017 at 05:55 PM
+- Server version: 5.5.16
+- PHP Version: 5.3.8
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="project" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="admin">
+                CREATE TABLE `admin` (
+                  `email` varchar(50) NOT NULL,
+                  `password` varchar(500) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="answer">
+                CREATE TABLE `answer` (
+                  `qid` text NOT NULL,
+                  `ansid` text NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="feedback">
+                CREATE TABLE `feedback` (
+                  `id` text NOT NULL,
+                  `name` varchar(50) NOT NULL,
+                  `email` varchar(50) NOT NULL,
+                  `subject` varchar(500) NOT NULL,
+                  `feedback` varchar(500) NOT NULL,
+                  `date` date NOT NULL,
+                  `time` varchar(50) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="history">
+                CREATE TABLE `history` (
+                  `email` varchar(50) NOT NULL,
+                  `eid` text NOT NULL,
+                  `score` int(11) NOT NULL,
+                  `level` int(11) NOT NULL,
+                  `sahi` int(11) NOT NULL,
+                  `wrong` int(11) NOT NULL,
+                  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="options">
+                CREATE TABLE `options` (
+                  `qid` varchar(50) NOT NULL,
+                  `option` varchar(5000) NOT NULL,
+                  `optionid` text NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="questions">
+                CREATE TABLE `questions` (
+                  `eid` text NOT NULL,
+                  `qid` text NOT NULL,
+                  `qns` text NOT NULL,
+                  `choice` int(10) NOT NULL,
+                  `sn` int(11) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="quiz">
+                CREATE TABLE `quiz` (
+                  `eid` text NOT NULL,
+                  `title` varchar(100) NOT NULL,
+                  `sahi` int(11) NOT NULL,
+                  `wrong` int(11) NOT NULL,
+                  `total` int(11) NOT NULL,
+                  `time` bigint(20) NOT NULL,
+                  `intro` text NOT NULL,
+                  `tag` varchar(100) NOT NULL,
+                  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="rank">
+                CREATE TABLE `rank` (
+                  `email` varchar(50) NOT NULL,
+                  `score` int(11) NOT NULL,
+                  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="user">
+                CREATE TABLE `user` (
+                  `name` varchar(50) NOT NULL,
+                  `gender` varchar(5) NOT NULL,
+                  `college` varchar(100) NOT NULL,
+                  `email` varchar(50) NOT NULL,
+                  `mob` bigint(20) NOT NULL,
+                  `password` varchar(50) NOT NULL,
+                  PRIMARY KEY (`email`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'project'
+    -->
+    <database name="project">
+        <!-- Table admin -->
+        <table name="admin">
+            <column name="email">admin@admin.com</column>
+            <column name="password">123456</column>
+        </table>
+        <!-- Table answer -->
+        <table name="answer">
+            <column name="qid">55892169bf6a7</column>
+            <column name="ansid">55892169d2efc</column>
+        </table>
+        <table name="answer">
+            <column name="qid">5589216a3646e</column>
+            <column name="ansid">5589216a48722</column>
+        </table>
+        <table name="answer">
+            <column name="qid">558922117fcef</column>
+            <column name="ansid">5589221195248</column>
+        </table>
+        <table name="answer">
+            <column name="qid">55892211e44d5</column>
+            <column name="ansid">55892211f1fa7</column>
+        </table>
+        <table name="answer">
+            <column name="qid">558922894c453</column>
+            <column name="ansid">558922895ea0a</column>
+        </table>
+        <table name="answer">
+            <column name="qid">558922899ccaa</column>
+            <column name="ansid">55892289aa7cf</column>
+        </table>
+        <table name="answer">
+            <column name="qid">558923538f48d</column>
+            <column name="ansid">558923539a46c</column>
+        </table>
+        <table name="answer">
+            <column name="qid">55892353f05c4</column>
+            <column name="ansid">55892354051be</column>
+        </table>
+        <table name="answer">
+            <column name="qid">558973f4389ac</column>
+            <column name="ansid">558973f462e61</column>
+        </table>
+        <table name="answer">
+            <column name="qid">558973f4c46f2</column>
+            <column name="ansid">558973f4d4abe</column>
+        </table>
+        <table name="answer">
+            <column name="qid">558973f51600d</column>
+            <column name="ansid">558973f526fc5</column>
+        </table>
+        <table name="answer">
+            <column name="qid">558973f55d269</column>
+            <column name="ansid">558973f57af07</column>
+        </table>
+        <table name="answer">
+            <column name="qid">558973f5abb1a</column>
+            <column name="ansid">558973f5e764a</column>
+        </table>
+        <table name="answer">
+            <column name="qid">5589751a63091</column>
+            <column name="ansid">5589751a81bf4</column>
+        </table>
+        <table name="answer">
+            <column name="qid">5589751ad32b8</column>
+            <column name="ansid">5589751adbdbd</column>
+        </table>
+        <table name="answer">
+            <column name="qid">5589751b304ef</column>
+            <column name="ansid">5589751b3b04d</column>
+        </table>
+        <table name="answer">
+            <column name="qid">5589751b749c9</column>
+            <column name="ansid">5589751b9a98c</column>
+        </table>
+        <table name="answer">
+            <column name="qid">58c829abe1e1d</column>
+            <column name="ansid">58c829abe2fd2</column>
+        </table>
+        <table name="answer">
+            <column name="qid">58c829abe9f04</column>
+            <column name="ansid">58c829abea3be</column>
+        </table>
+        <table name="answer">
+            <column name="qid">58c968e0bc759</column>
+            <column name="ansid">58c968e0bcc0d</column>
+        </table>
+        <!-- Table feedback -->
+        <table name="feedback">
+            <column name="id">58c829fd51cc6</column>
+            <column name="name">Amit</column>
+            <column name="email">amitshinde966@gmail.com</column>
+            <column name="subject">Java</column>
+            <column name="feedback">hhh</column>
+            <column name="date">2017-03-14</column>
+            <column name="time">06:35:57pm</column>
+        </table>
+        <!-- Table history -->
+        <table name="history">
+            <column name="email">mayank@gmail.com</column>
+            <column name="eid">58c8298791ab8</column>
+            <column name="score">4</column>
+            <column name="level">2</column>
+            <column name="sahi">2</column>
+            <column name="wrong">0</column>
+            <column name="date">2017-03-15 22:20:03</column>
+        </table>
+        <!-- Table options -->
+        <table name="options">
+            <column name="qid">55892169bf6a7</column>
+            <column name="option">usermod</column>
+            <column name="optionid">55892169d2efc</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892169bf6a7</column>
+            <column name="option">useradd</column>
+            <column name="optionid">55892169d2f05</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892169bf6a7</column>
+            <column name="option">useralter</column>
+            <column name="optionid">55892169d2f09</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892169bf6a7</column>
+            <column name="option">groupmod</column>
+            <column name="optionid">55892169d2f0c</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589216a3646e</column>
+            <column name="option">751</column>
+            <column name="optionid">5589216a48713</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589216a3646e</column>
+            <column name="option">752</column>
+            <column name="optionid">5589216a4871a</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589216a3646e</column>
+            <column name="option">754</column>
+            <column name="optionid">5589216a4871f</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589216a3646e</column>
+            <column name="option">755</column>
+            <column name="optionid">5589216a48722</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922117fcef</column>
+            <column name="option">echo</column>
+            <column name="optionid">5589221195248</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922117fcef</column>
+            <column name="option">print</column>
+            <column name="optionid">558922119525a</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922117fcef</column>
+            <column name="option">printf</column>
+            <column name="optionid">5589221195265</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922117fcef</column>
+            <column name="option">cout</column>
+            <column name="optionid">5589221195270</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892211e44d5</column>
+            <column name="option">int a</column>
+            <column name="optionid">55892211f1f97</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892211e44d5</column>
+            <column name="option">$a</column>
+            <column name="optionid">55892211f1fa7</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892211e44d5</column>
+            <column name="option">long int a</column>
+            <column name="optionid">55892211f1fb4</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892211e44d5</column>
+            <column name="option">int a$</column>
+            <column name="optionid">55892211f1fbd</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922894c453</column>
+            <column name="option">cin&gt;&gt;a;</column>
+            <column name="optionid">558922895ea0a</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922894c453</column>
+            <column name="option">cin&lt;&lt;a;</column>
+            <column name="optionid">558922895ea26</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922894c453</column>
+            <column name="option">cout&gt;&gt;a;</column>
+            <column name="optionid">558922895ea34</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922894c453</column>
+            <column name="option">cout&lt;a;</column>
+            <column name="optionid">558922895ea41</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922899ccaa</column>
+            <column name="option">cout</column>
+            <column name="optionid">55892289aa7cf</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922899ccaa</column>
+            <column name="option">cin</column>
+            <column name="optionid">55892289aa7df</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922899ccaa</column>
+            <column name="option">print</column>
+            <column name="optionid">55892289aa7eb</column>
+        </table>
+        <table name="options">
+            <column name="qid">558922899ccaa</column>
+            <column name="option">printf</column>
+            <column name="optionid">55892289aa7f5</column>
+        </table>
+        <table name="options">
+            <column name="qid">558923538f48d</column>
+            <column name="option">255.0.0.0</column>
+            <column name="optionid">558923539a46c</column>
+        </table>
+        <table name="options">
+            <column name="qid">558923538f48d</column>
+            <column name="option">255.255.255.0</column>
+            <column name="optionid">558923539a480</column>
+        </table>
+        <table name="options">
+            <column name="qid">558923538f48d</column>
+            <column name="option">255.255.0.0</column>
+            <column name="optionid">558923539a48b</column>
+        </table>
+        <table name="options">
+            <column name="qid">558923538f48d</column>
+            <column name="option">none of these</column>
+            <column name="optionid">558923539a495</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892353f05c4</column>
+            <column name="option">192.168.1.100</column>
+            <column name="optionid">5589235405192</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892353f05c4</column>
+            <column name="option">172.168.16.2</column>
+            <column name="optionid">55892354051a3</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892353f05c4</column>
+            <column name="option">10.0.0.0.1</column>
+            <column name="optionid">55892354051b4</column>
+        </table>
+        <table name="options">
+            <column name="qid">55892353f05c4</column>
+            <column name="option">11.11.11.11</column>
+            <column name="optionid">55892354051be</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f4389ac</column>
+            <column name="option">containing root file-system required during bootup</column>
+            <column name="optionid">558973f462e44</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f4389ac</column>
+            <column name="option"> Contains only scripts to be executed during bootup</column>
+            <column name="optionid">558973f462e56</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f4389ac</column>
+            <column name="option"> Contains root-file system and drivers required to be preloaded during bootup</column>
+            <column name="optionid">558973f462e61</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f4389ac</column>
+            <column name="option">None of the above</column>
+            <column name="optionid">558973f462e6b</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f4c46f2</column>
+            <column name="option">Kernel</column>
+            <column name="optionid">558973f4d4abe</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f4c46f2</column>
+            <column name="option">Shell</column>
+            <column name="optionid">558973f4d4acf</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f4c46f2</column>
+            <column name="option">Commands</column>
+            <column name="optionid">558973f4d4ad9</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f4c46f2</column>
+            <column name="option">Script</column>
+            <column name="optionid">558973f4d4ae3</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f51600d</column>
+            <column name="option">Boot Loading</column>
+            <column name="optionid">558973f526f9d</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f51600d</column>
+            <column name="option"> Boot Record</column>
+            <column name="optionid">558973f526fb9</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f51600d</column>
+            <column name="option"> Boot Strapping</column>
+            <column name="optionid">558973f526fc5</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f51600d</column>
+            <column name="option"> Booting</column>
+            <column name="optionid">558973f526fce</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f55d269</column>
+            <column name="option"> Quick boot</column>
+            <column name="optionid">558973f57aef1</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f55d269</column>
+            <column name="option">Cold boot</column>
+            <column name="optionid">558973f57af07</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f55d269</column>
+            <column name="option"> Hot boot</column>
+            <column name="optionid">558973f57af17</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f55d269</column>
+            <column name="option"> Fast boot</column>
+            <column name="optionid">558973f57af27</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f5abb1a</column>
+            <column name="option">bash</column>
+            <column name="optionid">558973f5e7623</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f5abb1a</column>
+            <column name="option"> Csh</column>
+            <column name="optionid">558973f5e7636</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f5abb1a</column>
+            <column name="option"> ksh</column>
+            <column name="optionid">558973f5e7640</column>
+        </table>
+        <table name="options">
+            <column name="qid">558973f5abb1a</column>
+            <column name="option"> sh</column>
+            <column name="optionid">558973f5e764a</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751a63091</column>
+            <column name="option">q</column>
+            <column name="optionid">5589751a81bd6</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751a63091</column>
+            <column name="option">wq</column>
+            <column name="optionid">5589751a81be8</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751a63091</column>
+            <column name="option"> both (a) and (b)</column>
+            <column name="optionid">5589751a81bf4</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751a63091</column>
+            <column name="option"> none of the mentioned</column>
+            <column name="optionid">5589751a81bfd</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751ad32b8</column>
+            <column name="option"> moves screen down one page</column>
+            <column name="optionid">5589751adbdbd</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751ad32b8</column>
+            <column name="option">moves screen up one page</column>
+            <column name="optionid">5589751adbdce</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751ad32b8</column>
+            <column name="option">moves screen up one line</column>
+            <column name="optionid">5589751adbdd8</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751ad32b8</column>
+            <column name="option"> moves screen down one line</column>
+            <column name="optionid">5589751adbde2</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751b304ef</column>
+            <column name="option"> yy</column>
+            <column name="optionid">5589751b3b04d</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751b304ef</column>
+            <column name="option">yw</column>
+            <column name="optionid">5589751b3b05e</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751b304ef</column>
+            <column name="option">yc</column>
+            <column name="optionid">5589751b3b069</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751b304ef</column>
+            <column name="option"> none of the mentioned</column>
+            <column name="optionid">5589751b3b073</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751b749c9</column>
+            <column name="option">X</column>
+            <column name="optionid">5589751b9a98c</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751b749c9</column>
+            <column name="option">x</column>
+            <column name="optionid">5589751b9a9a5</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751b749c9</column>
+            <column name="option">D</column>
+            <column name="optionid">5589751b9a9b7</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751b749c9</column>
+            <column name="option">d</column>
+            <column name="optionid">5589751b9a9c9</column>
+        </table>
+        <table name="options">
+            <column name="qid">5589751bd02ec</column>
+            <column name="option">autoindentation is not possible in vi editor</column>
+            <column name="optionid">5589751bdadaa</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c829abe1e1d</column>
+            <column name="option">C</column>
+            <column name="optionid">58c829abe2fb8</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c829abe1e1d</column>
+            <column name="option">Java</column>
+            <column name="optionid">58c829abe2fd2</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c829abe1e1d</column>
+            <column name="option">Ada</column>
+            <column name="optionid">58c829abe2fd5</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c829abe1e1d</column>
+            <column name="option">Cobol</column>
+            <column name="optionid">58c829abe2fd9</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c829abe9f04</column>
+            <column name="option">SOP </column>
+            <column name="optionid">58c829abea3be</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c829abe9f04</column>
+            <column name="option">cout</column>
+            <column name="optionid">58c829abea3c3</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c829abe9f04</column>
+            <column name="option">cin</column>
+            <column name="optionid">58c829abea3c5</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c829abe9f04</column>
+            <column name="option">print</column>
+            <column name="optionid">58c829abea3c8</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c968e0bc759</column>
+            <column name="option">My</column>
+            <column name="optionid">58c968e0bcc0d</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c968e0bc759</column>
+            <column name="option">jj</column>
+            <column name="optionid">58c968e0bcc13</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c968e0bc759</column>
+            <column name="option">jk</column>
+            <column name="optionid">58c968e0bcc14</column>
+        </table>
+        <table name="options">
+            <column name="qid">58c968e0bc759</column>
+            <column name="option">ll</column>
+            <column name="optionid">58c968e0bcc16</column>
+        </table>
+        <!-- Table questions -->
+        <table name="questions">
+            <column name="eid">558920ff906b8</column>
+            <column name="qid">55892169bf6a7</column>
+            <column name="qns">what is command for changing user information??</column>
+            <column name="choice">4</column>
+            <column name="sn">1</column>
+        </table>
+        <table name="questions">
+            <column name="eid">558920ff906b8</column>
+            <column name="qid">5589216a3646e</column>
+            <column name="qns">what is permission for view only for other??</column>
+            <column name="choice">4</column>
+            <column name="sn">2</column>
+        </table>
+        <table name="questions">
+            <column name="eid">558921841f1ec</column>
+            <column name="qid">558922117fcef</column>
+            <column name="qns">what is command for print in php??</column>
+            <column name="choice">4</column>
+            <column name="sn">1</column>
+        </table>
+        <table name="questions">
+            <column name="eid">558921841f1ec</column>
+            <column name="qid">55892211e44d5</column>
+            <column name="qns">which is a variable of php??</column>
+            <column name="choice">4</column>
+            <column name="sn">2</column>
+        </table>
+        <table name="questions">
+            <column name="eid">5589222f16b93</column>
+            <column name="qid">558922894c453</column>
+            <column name="qns">what is correct statement in c++??</column>
+            <column name="choice">4</column>
+            <column name="sn">1</column>
+        </table>
+        <table name="questions">
+            <column name="eid">5589222f16b93</column>
+            <column name="qid">558922899ccaa</column>
+            <column name="qns">which command is use for print the output in c++?</column>
+            <column name="choice">4</column>
+            <column name="sn">2</column>
+        </table>
+        <table name="questions">
+            <column name="eid">558922ec03021</column>
+            <column name="qid">558923538f48d</column>
+            <column name="qns">what is correct mask for A class IP???</column>
+            <column name="choice">4</column>
+            <column name="sn">1</column>
+        </table>
+        <table name="questions">
+            <column name="eid">558922ec03021</column>
+            <column name="qid">55892353f05c4</column>
+            <column name="qns">which is not a private IP??</column>
+            <column name="choice">4</column>
+            <column name="sn">2</column>
+        </table>
+        <table name="questions">
+            <column name="eid">55897338a6659</column>
+            <column name="qid">558973f4389ac</column>
+            <column name="qns">On Linux, initrd is a file</column>
+            <column name="choice">4</column>
+            <column name="sn">1</column>
+        </table>
+        <table name="questions">
+            <column name="eid">55897338a6659</column>
+            <column name="qid">558973f4c46f2</column>
+            <column name="qns">Which is loaded into memory when system is booted?</column>
+            <column name="choice">4</column>
+            <column name="sn">2</column>
+        </table>
+        <table name="questions">
+            <column name="eid">55897338a6659</column>
+            <column name="qid">558973f51600d</column>
+            <column name="qns"> The process of starting up a computer is known as</column>
+            <column name="choice">4</column>
+            <column name="sn">3</column>
+        </table>
+        <table name="questions">
+            <column name="eid">55897338a6659</column>
+            <column name="qid">558973f55d269</column>
+            <column name="qns"> Bootstrapping is also known as</column>
+            <column name="choice">4</column>
+            <column name="sn">4</column>
+        </table>
+        <table name="questions">
+            <column name="eid">55897338a6659</column>
+            <column name="qid">558973f5abb1a</column>
+            <column name="qns">The shell used for Single user mode shell is:</column>
+            <column name="choice">4</column>
+            <column name="sn">5</column>
+        </table>
+        <table name="questions">
+            <column name="eid">5589741f9ed52</column>
+            <column name="qid">5589751a63091</column>
+            <column name="qns"> Which command is used to close the vi editor?</column>
+            <column name="choice">4</column>
+            <column name="sn">1</column>
+        </table>
+        <table name="questions">
+            <column name="eid">5589741f9ed52</column>
+            <column name="qid">5589751ad32b8</column>
+            <column name="qns"> In vi editor, the key combination CTRL+f</column>
+            <column name="choice">4</column>
+            <column name="sn">2</column>
+        </table>
+        <table name="questions">
+            <column name="eid">5589741f9ed52</column>
+            <column name="qid">5589751b304ef</column>
+            <column name="qns"> Which vi editor command copies the current line of the file?</column>
+            <column name="choice">4</column>
+            <column name="sn">3</column>
+        </table>
+        <table name="questions">
+            <column name="eid">5589741f9ed52</column>
+            <column name="qid">5589751b749c9</column>
+            <column name="qns"> Which command is used to delete the character before the cursor location in vi editor?</column>
+            <column name="choice">4</column>
+            <column name="sn">4</column>
+        </table>
+        <table name="questions">
+            <column name="eid">5589741f9ed52</column>
+            <column name="qid">5589751bd02ec</column>
+            <column name="qns"> Which one of the following statement is true?</column>
+            <column name="choice">4</column>
+            <column name="sn">5</column>
+        </table>
+        <table name="questions">
+            <column name="eid">58c8298791ab8</column>
+            <column name="qid">58c829abe1e1d</column>
+            <column name="qns">Java</column>
+            <column name="choice">4</column>
+            <column name="sn">1</column>
+        </table>
+        <table name="questions">
+            <column name="eid">58c8298791ab8</column>
+            <column name="qid">58c829abe9f04</column>
+            <column name="qns">How to display</column>
+            <column name="choice">4</column>
+            <column name="sn">2</column>
+        </table>
+        <table name="questions">
+            <column name="eid">58c968d4e3919</column>
+            <column name="qid">58c968e0bc759</column>
+            <column name="qns">My </column>
+            <column name="choice">4</column>
+            <column name="sn">1</column>
+        </table>
+        <!-- Table quiz -->
+        <table name="quiz">
+            <column name="eid">558920ff906b8</column>
+            <column name="title">Linux : File Managment</column>
+            <column name="sahi">2</column>
+            <column name="wrong">1</column>
+            <column name="total">2</column>
+            <column name="time">5</column>
+            <column name="intro"></column>
+            <column name="tag">linux</column>
+            <column name="date">2015-06-23 14:33:59</column>
+        </table>
+        <table name="quiz">
+            <column name="eid">558921841f1ec</column>
+            <column name="title">Php Coding</column>
+            <column name="sahi">2</column>
+            <column name="wrong">1</column>
+            <column name="total">2</column>
+            <column name="time">5</column>
+            <column name="intro"></column>
+            <column name="tag">PHP</column>
+            <column name="date">2015-06-23 14:36:12</column>
+        </table>
+        <table name="quiz">
+            <column name="eid">5589222f16b93</column>
+            <column name="title">C++ Coding</column>
+            <column name="sahi">2</column>
+            <column name="wrong">1</column>
+            <column name="total">2</column>
+            <column name="time">5</column>
+            <column name="intro"></column>
+            <column name="tag">c++</column>
+            <column name="date">2015-06-23 14:39:03</column>
+        </table>
+        <table name="quiz">
+            <column name="eid">558922ec03021</column>
+            <column name="title">Networking</column>
+            <column name="sahi">2</column>
+            <column name="wrong">1</column>
+            <column name="total">2</column>
+            <column name="time">5</column>
+            <column name="intro"></column>
+            <column name="tag">networking</column>
+            <column name="date">2015-06-23 14:42:12</column>
+        </table>
+        <table name="quiz">
+            <column name="eid">55897338a6659</column>
+            <column name="title">Linux:startup</column>
+            <column name="sahi">2</column>
+            <column name="wrong">1</column>
+            <column name="total">5</column>
+            <column name="time">10</column>
+            <column name="intro"></column>
+            <column name="tag">linux</column>
+            <column name="date">2015-06-23 20:24:48</column>
+        </table>
+        <table name="quiz">
+            <column name="eid">5589741f9ed52</column>
+            <column name="title">Linux :vi Editor</column>
+            <column name="sahi">2</column>
+            <column name="wrong">1</column>
+            <column name="total">5</column>
+            <column name="time">10</column>
+            <column name="intro"></column>
+            <column name="tag">linux</column>
+            <column name="date">2015-06-23 20:28:39</column>
+        </table>
+        <table name="quiz">
+            <column name="eid">58c8298791ab8</column>
+            <column name="title">Jav</column>
+            <column name="sahi">2</column>
+            <column name="wrong">0</column>
+            <column name="total">2</column>
+            <column name="time">10</column>
+            <column name="intro"></column>
+            <column name="tag"></column>
+            <column name="date">2017-03-14 23:03:59</column>
+        </table>
+        <table name="quiz">
+            <column name="eid">58c968d4e3919</column>
+            <column name="title">My Quiz</column>
+            <column name="sahi">2</column>
+            <column name="wrong">0</column>
+            <column name="total">1</column>
+            <column name="time">1</column>
+            <column name="intro"></column>
+            <column name="tag"></column>
+            <column name="date">2017-03-15 21:46:20</column>
+        </table>
+        <!-- Table rank -->
+        <table name="rank">
+            <column name="email">amitshinde966@gmail.com</column>
+            <column name="score">-2</column>
+            <column name="time">2017-03-15 22:10:06</column>
+        </table>
+        <table name="rank">
+            <column name="email">mayank@gmail.com</column>
+            <column name="score">4</column>
+            <column name="time">2017-03-15 22:20:03</column>
+        </table>
+        <!-- Table user -->
+        <table name="user">
+            <column name="name">Amit</column>
+            <column name="gender">M</column>
+            <column name="college">aaa</column>
+            <column name="email">amitshinde966@gmail.com</column>
+            <column name="mob">8446222978</column>
+            <column name="password">d7153de4284c0184fe23f5eed9a552c8</column>
+        </table>
+        <table name="user">
+            <column name="name">Mayank</column>
+            <column name="gender">M</column>
+            <column name="college">MIT</column>
+            <column name="email">mayank@gmail.com</column>
+            <column name="mob">8888888888</column>
+            <column name="password">e10adc3949ba59abbe56e057f20f883e</column>
+        </table>
+    </database>
+</pma_xml_export>
